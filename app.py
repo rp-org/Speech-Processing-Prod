@@ -197,8 +197,8 @@ async def predict(
         "whisper_accuracy": whisper_accuracy,
         "wav2vec_text": wav2vec_text,
         "wav2vec_accuracy": wav2vec_accuracy,
-        "lip_reading_text": lip_reading_text if lip_reading_text else wav2vec_text,
-        "lip_reading_accuracy": lip_reading_accuracy if lip_reading_text else wav2vec_accuracy,
+        "lip_reading_text": lip_reading_text ,
+        "lip_reading_accuracy": lip_reading_accuracy,
         "overall_accuracy": overall_accuracy,
         "feedback": feedback
     }

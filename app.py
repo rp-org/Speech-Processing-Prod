@@ -189,7 +189,7 @@ async def predict(
     overall_accuracy = sum(accuracies) / len(accuracies)
 
     feedback = "Excellent performance!" if overall_accuracy > 85 else "Good job! Keep improving!" if overall_accuracy > 70 else "Needs more practice!"
-
+    
     # Fetch similar words when accuracy is low
     suggested_words = []
     if overall_accuracy < 70:
@@ -205,7 +205,7 @@ async def predict(
         "lip_reading_text": lip_reading_text if lip_reading_text else wav2vec_text,
         "lip_reading_accuracy": lip_reading_accuracy if lip_reading_text else wav2vec_accuracy,
         "overall_accuracy": overall_accuracy,
-        "feedback": feedback
+        "feedback": feedback,
          **({"similar_words": suggested_words} if overall_accuracy < 70 else {})  # Add only if accuracy < 70
     }
 
